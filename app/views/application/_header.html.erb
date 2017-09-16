@@ -8,21 +8,27 @@
     </div>
   </nav>
   <div class='pull-right user-nav'>
-    <ul id='authmenu' class='dropdown-menu' role='menu' aria-labelledby='dLabel'>
-      <li><%= link_to 'Your profile', current_user %></li>
-      <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
-      <li class='divider'></li>
-      <li><a href='#fakelink'>Send feedback</a></li>
-    </ul>
-    <%= link_to new_talk_path, class: 'quiet pad1y inline small strong' do %>
-      <i class='icon icon-bullhorn pad0r'></i>Sign up to talk
+    <% if signed_in? %>
+      <ul id='authmenu' class='dropdown-menu' role='menu' aria-labelledby='dLabel'>
+        <li><%= link_to 'Your profile', current_user %></li>
+        <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
+        <li class='divider'></li>
+        <li><%= link_to 'Sign Out', signout_path, method: :delete %></li>
+      </ul>
+      <%= link_to new_talk_path, class: 'quiet pad1y inline small strong' do %>
+        <i class='icon icon-bullhorn pad0r'></i>Sign up to talk
+      <% end %>
+      <a href='#fakelink' class='btn btn-default'>
+        <i class='icon icon-bell quiet'></i>
+      </a>
+      <a href='#fakelink' class='inline' data-toggle='dropdown' style='vertical-align: top'>
+        <%= avatar_for current_user, class: 'avatar inline round' %>
+        <span class='caret quiet'></span>
+      </a>
+    <% else %>
+      <%= link_to '/auth/github', class: 'dark quiet pad1 inline strong' do %>
+        Sign In with GitHub <i class='icon icon-log-in'></i>
+      <% end %>
     <% end %>
-    <a href='#fakelink' class='btn btn-default'>
-      <i class='icon icon-bell quiet'></i>
-    </a>
-    <a href='#fakelink' class='inline' data-toggle='dropdown' style='vertical-align: top'>
-      <%= avatar_for current_user, class: 'avatar inline round' %>
-      <span class='caret quiet'></span>
-    </a>
   </div>
 </header>

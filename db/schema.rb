@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201191335) do
+ActiveRecord::Schema.define(version: 20170916023454) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "title",            limit: 50, default: ""
@@ -109,6 +109,10 @@ ActiveRecord::Schema.define(version: 20161201191335) do
     t.integer  "favorites_count", default: 0
     t.integer  "talks_count",     default: 0
     t.string   "bio"
+    t.string   "avatar_url"
+    t.string   "uid"
+    t.string   "provider"
+    t.string   "oauth_token"
     t.index ["username"], name: "index_users_on_username"
   end
 

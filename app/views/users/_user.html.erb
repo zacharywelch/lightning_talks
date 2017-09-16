@@ -1,5 +1,5 @@
-<%= content_tag :li, id: "user_#{user.id}", 
-                class: user_iteration.last? ? 
+<%= content_tag :li, id: "user_#{user.id}",
+                class: user_iteration.last? ?
                   'user pad2y' : 'user pad2y keyline-bottom' do %>
   <div class='media contain'>
     <%= link_to '', user_path(user), class: 'permalink pin-topleft block' %>
@@ -28,6 +28,6 @@
         </li>
       </ul>
     </div>
-    <%= render partial: 'follow_form', locals: { user: user } %>
+    <%= render partial: 'follow_form', locals: { user: user } if signed_in? %>
   </div>
 <% end %>

@@ -1,6 +1,6 @@
 module AvatarHelper
 
   def avatar_for(user, options = {})
-    image_tag user.gravatar_url, options.merge(alt: user.full_name)
+    image_tag user.avatar_url, options.merge(alt: user.username)
   end
 end

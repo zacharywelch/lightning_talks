@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index, :show]
 
-  get  'signin' => 'sessions#new'
-  post 'saml/consume' => 'sessions#create'
-  post 'sessions/create' => 'sessions#create'
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  delete 'signout', to: 'sessions#destroy', as: 'signout'
 end

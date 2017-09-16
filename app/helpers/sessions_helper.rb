@@ -4,7 +4,7 @@ module SessionsHelper
   end
 
   def signed_in?
-    !current_user.nil?
+    !current_user.is_a?(Guest)
   end
 
   def current_user=(user)
@@ -12,17 +12,19 @@ module SessionsHelper
   end
 
   def current_user
-    @current_user ||= User.find_by(username: session[:user_id])
+    @current_user ||= begin
+      session[:user_id] ? User.find(session[:user_id]) : Guest.new
+    end
   end
 
   def current_user?(user)
     user == current_user
   end
-  
+
   def signed_in_user
     unless signed_in?
       store_location
-      redirect_to signin_url
+      redirect_to '/auth/github'
     end
   end
 

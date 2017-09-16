@@ -22,11 +22,10 @@
     <%= f.label :bio, 'Short bio' %>
     <%= f.text_field :bio, class: 'stretch' %>
   </fieldset>
-  <fieldset class='gravatar_edit'>
+  <fieldset>
     <%= avatar_for @user %>
-    <a href="http://gravatar.com/emails" target="_blank">change</a>
   </fieldset>
-  <div class='pad1y space-bottom4'>  
+  <div class='pad1y space-bottom4'>
     <%= f.submit 'Save Changes', class: 'btn btn-primary space-bottom' %>
   </div>
 <% end %>

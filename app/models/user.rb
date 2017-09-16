@@ -1,7 +1,4 @@
 class User < ApplicationRecord
-  include Gravtastic
-  gravtastic default: 'identicon'
-
   has_many :meetings
   has_many :talks
   has_many :favorites
@@ -17,8 +14,6 @@ class User < ApplicationRecord
 
   validates :username, presence: true
   validates :bio, length: { maximum: 65 }
-
-  before_create :set_admin, :get_info
 
   scope :speaker, -> { where('talks_count > 0') }
 
@@ -54,18 +49,12 @@ class User < ApplicationRecord
     talks.any?
   end
 
-  private
-
-  def set_admin
-    if self.username == 'cbanks'
-      self.admin = true
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.username = auth.info.nickname
+      user.email = auth.info.email
+      user.avatar_url = auth.extra.raw_info.avatar_url
+      user.oauth_token = auth.credentials.token
     end
-  end
-
-  def get_info
-    employee = Services::Employee.find(self.username)
-    self.first_name = employee.first_name
-    self.last_name = employee.last_name
-    self.email = employee.email
   end
 end

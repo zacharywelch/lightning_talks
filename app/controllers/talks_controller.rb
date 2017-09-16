@@ -1,4 +1,5 @@
 class TalksController < ApplicationController
+  before_action :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_user, only: [:index]
   before_action :set_meeting, only: [:new]
   before_action :set_talk, only: [:show, :edit, :update, :destroy]
