@@ -1,24 +1,45 @@
-# README
+# Lightning Talk App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sharing is caring :purple_heart:
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+Follow these steps to get started in development.
 
-* System dependencies
+Clone the repository
 
-* Configuration
+    $ git clone git@github.com:zacharywelch/lightning_talks.git
 
-* Database creation
+Switch to the project's directory
 
-* Database initialization
+    $ cd lightning_talks
 
-* How to run the test suite
+Then bundle
 
-* Services (job queues, cache servers, search engines, etc.)
+    $ bundle
 
-* Deployment instructions
+Copy database.yml.sample as database.yml
 
-* ...
+    $ cp config/database.yml.sample config/database.yml
+
+Copy secrets.yml.sample as secrets.yml
+
+    $ cp config/secrets.yml.sample config/secrets.yml
+
+Copy aws.yml.sample as aws.yml
+
+    $ cp config/aws.yml.sample config/aws.yml
+
+Make sure all config files mentioned above are filled with the proper configuration data
+
+Run the migrations
+
+    $ rake db:migrate
+
+Populate with sample data
+
+    $ rake db:populate
+
+Run tests
+
+    $ rspec spec
