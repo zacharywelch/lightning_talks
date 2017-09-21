@@ -17,6 +17,8 @@ class User < ApplicationRecord
 
   scope :speaker, -> { where('talks_count > 0') }
 
+  strip_attributes
+
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -53,6 +55,9 @@ class User < ApplicationRecord
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.username = auth.info.nickname
       user.email = auth.info.email
+      user.first_name = auth.info.first_name
+      user.last_name = auth.info.last_name
+      user.bio = auth.info.description
       user.avatar_url = auth.extra.raw_info.avatar_url
       user.oauth_token = auth.credentials.token
     end
