@@ -41,11 +41,14 @@
                             meetings(@talk),
                             :id, :title, selected: @talk.meeting.id) %>
   </fieldset>
+
   <% if current_user.admin? %>
     <fieldset>
       <%= f.label :user %>
       <%= f.collection_select :user_id, User.order(last_name: 'asc'), :id, :full_name, selected: @talk.user_id,  prompt: true %>
     </fieldset>
+  <% else %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
   <% end %>
 
   <fieldset class='attachment-section'>
