@@ -43,3 +43,5 @@ Populate with sample data
 Run tests
 
     $ rspec spec
+
+:wave: Don't forget to [register](https://github.com/settings/applications/new) the application for oauth on Github otherwise you won't be able to sign in. Use `http://localhost:3000` as the **Homepage URL** and `http://localhost:3000/auth/github/callback` as the **Authorization callback URL**. For more information see [here](https://developer.github.com/apps/building-integrations/setting-up-and-registering-oauth-apps/registering-oauth-apps/).
