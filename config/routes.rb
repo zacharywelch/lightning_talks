@@ -7,26 +7,19 @@ Rails.application.routes.draw do
 
   resources :talks, only: [:show, :edit, :update, :destroy, :new] do
     resource :comments, only: [:create]
-    collection do
-      get :upcoming, :recent, :popular
-    end
+    get :upcoming, :recent, :popular, on: :collection
   end
 
   resources :users do
     resources :talks, only: [:index]
     resources :favorites, only: [:index]
-    member do
-      get :following, :followers
-    end
+    get :following, :followers, on: :member
+    get :speakers, on: :collection
   end
-
-  get :speakers, to: 'users#speakers'
 
   resources :relationships, only: [:create, :destroy]
   resources :favorites
-
   resources :tags, only: [:index, :show]
-
   resources :categories, only: [:index, :show]
 
   get '/auth/:provider/callback', to: 'sessions#create'

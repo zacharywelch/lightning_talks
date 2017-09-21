@@ -26,7 +26,7 @@
       <span class="pull-right fill-darken1 img-circle center small pad0x space0l"><%= @users.total_count %></span>
     <% end %>
     <%= tab_link 'Speakers',
-                 speakers_path,
+                 speakers_users_path,
                  data: { toggle: 'tab',
                          remote: true,
                          tab: 'speakers' } do %>
@@ -39,5 +39,5 @@
     <%= render @users %>
   </ul>
 
-  <%= paginate @users %>  
+  <%= paginate @users %>
 </div>
