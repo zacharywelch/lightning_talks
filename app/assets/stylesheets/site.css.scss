@@ -1,8 +1,8 @@
 /* Global styles
 ------------------------------------------------------- */
-.dark .tag { 
-  background: rgba(255, 255, 255, 0.25); 
-  font-family: 'Open Sans Semibold', sans-serif; 
+.dark .tag {
+  background: rgba(255, 255, 255, 0.25);
+  font-family: 'Open Sans Semibold', sans-serif;
 }
 
 .dark .error-message { background: rgba(255, 255, 255, 0.1); }
@@ -25,6 +25,7 @@
 .stats .icon-comment { margin-left: 8px; }
 
 .fill-teal { background-color: #41afa5; }
+.text-purple { color: #8a8acb; }
 
 textarea { height: auto; }
 
@@ -37,22 +38,22 @@ textarea { height: auto; }
   font-family: 'Open Sans Bold';
 }
 
-.speaker { 
+.speaker {
   width: 28px;
   height: 28px;
   line-height: 28px;
   margin-right: 3px;
 }
 
-.btn.next-talk { 
-  border-radius: 50%; 
+.btn.next-talk {
+  border-radius: 50%;
   top: 40%;
   margin-top: -20px;
   padding-left: 10px;
   padding-right: 10px;
   padding: 7px;
   width: 34px;
-  height: 34px;  
+  height: 34px;
 }
 
 .talks { margin: -20px; }
@@ -77,14 +78,14 @@ textarea, input[type=password], input[type=text], input[type=email], input[type=
 .category .img-circle { margin-right: 10px; }
 .users p { margin-bottom: 13px; }
 .pad2r { padding-right: 20px; }
-.users .btn { 
+.users .btn {
   top: 50%;
   margin-top: -20px;
   z-index: 1;
 }
 
-.navbar { 
-  z-index: 10; 
+.navbar {
+  z-index: 10;
 
   .btn {
     font-size: 14px;
@@ -94,13 +95,13 @@ textarea, input[type=password], input[type=text], input[type=email], input[type=
     line-height: 39px;
   }
 
-  .avatar { 
+  .avatar {
     color: #fff;
     font-family: 'Open Sans Bold';
     width: 38px;
     height: 38px;
     line-height: 38px;
-    font-size: 14px;  
+    font-size: 14px;
     vertical-align: middle;
   }
 }
@@ -117,7 +118,7 @@ textarea, input[type=password], input[type=text], input[type=email], input[type=
 .inset-header {
   position: relative;
   margin: -78px 0 40px 0;
-  padding: 114px 0 34px 0;  
+  padding: 114px 0 34px 0;
   background: image-url('banner.png') center top #272727;
   background-size: 1600px 700px;
   &.talk { padding: 118px 0 55px 0; }
@@ -133,7 +134,7 @@ textarea, input[type=password], input[type=text], input[type=email], input[type=
   display: block;
   width: 100%;
   height: 20px;
-  box-shadow: inset 0 -10px 10px 0 rgba(0,0,0,0.09);  
+  box-shadow: inset 0 -10px 10px 0 rgba(0,0,0,0.09);
 }
 
 .actions {
@@ -142,16 +143,16 @@ textarea, input[type=password], input[type=text], input[type=email], input[type=
   bottom: -55px;
   right: 0;
 
-  li { 
+  li {
     display: inline-block;
     vertical-align: top;
   }
   .icon { font-size: 14px; }
 }
 
-.talk .actions, 
+.talk .actions,
 .profile .actions { bottom: -75px; }
-.profile .badge { 
+.profile .badge {
   margin-left: 10px;
   height: 24px;
   margin-top: -2px;
@@ -163,45 +164,45 @@ textarea, input[type=password], input[type=text], input[type=email], input[type=
 .permalink {
   z-index: 1;
   width: 100%;
-  height: 100%;  
+  height: 100%;
   padding-right: 100px;
 }
 
 .dark .btn-default,
-.dark .btn-default[type=submit], 
+.dark .btn-default[type=submit],
 .dark .btn-default[type=button] { background: #484848; }
 
 .space0l { margin-left: 5px; }
 
 a.text-default,
-a.text-default:hover { 
-  color: inherit; 
+a.text-default:hover {
+  color: inherit;
 }
 
 .col-sm-gutter {
   margin-right: 2%;
 }
 
-.col-sm-gutter:nth-child(3n+0) { 
-  margin-right: 0; 
+.col-sm-gutter:nth-child(3n+0) {
+  margin-right: 0;
 }
 
 .col-sm-gutter {
   width: 32%;
 }
 
-.pad3x { 
+.pad3x {
   padding-left: 30px;
   padding-right: 30px;
 }
 
-.btn { 
+.btn {
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .actions .btn,
-.btn-lg { 
+.btn-lg {
   font-family: 'Open Sans Bold';
   padding-left: 20px;
   padding-right: 20px;
@@ -219,7 +220,7 @@ a.text-default:hover {
 .tab-link.keyline-bottom { border-bottom: 3px solid transparent; }
 
 .tab-link.active {
-  border-color: #3887be;  
+  border-color: #3887be;
 }
 
 /* Prevents animation on initial page load. */
