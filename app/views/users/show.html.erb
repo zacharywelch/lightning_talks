@@ -8,7 +8,7 @@
       <% end %>
       <div class='media-body pad1l'>
         <h1>
-          <%= @user.full_name %><%= speaker_badge(@user) %>
+          <%= user_full_name(@user) %><%= speaker_badge(@user) %>
         </h1>
         <p class='lead quiet'>
           <%= @user.bio || "I haven't changed my bio yet :)" %>

@@ -15,7 +15,7 @@
         By
         <%= link_to @talk.user do %>
           <%= avatar_for @talk.user, width: 24, class: 'img-rounded',
-                         style: 'margin: 0 5px' %><%= @talk.user.full_name %>
+                         style: 'margin: 0 5px' %><%= user_full_name @talk.user %>
         <% end %>
         <span>
           on <%= link_to @talk.meeting.title, @talk.meeting, class: 'quiet' %>

@@ -1,8 +1,9 @@
 <div class='inline quiet'>
   <%= link_to talk.user do %>
-    <%= avatar_for talk.user, width: 20, class: 'img-rounded inline', style: 'margin-right: 3px;' %>
+    <%= avatar_for talk.user, width: 20, class: 'img-rounded inline',
+                              style: 'margin-right: 3px;' %>
     <strong class='quiet'>
-      <%= talk.user.first_name || talk.user.username %>
+      <%= user_first_name talk.user %>
     </strong>
   <% end %>
   <span>on <%= talk.meeting.title %></span>

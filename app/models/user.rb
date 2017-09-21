@@ -20,7 +20,8 @@ class User < ApplicationRecord
   strip_attributes
 
   def full_name
-    "#{first_name} #{last_name}"
+    names = [first_name, last_name].compact
+    names.join(' ') unless names.empty?
   end
 
   def follow!(user)
