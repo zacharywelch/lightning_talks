@@ -1,18 +1,9 @@
-class CommentsController < ApplicationController  
-  before_action :set_talk
+class CommentsController < ApplicationController
+  before_action :signed_in_user, :set_talk
 
   def create
     @comment = @talk.comments.new(comment_params)
-    if @comment.save
-      redirect_to @talk
-    else
-      render 'talks/show'
-    end
-  end
 
-  def create
-    @comment = @talk.comments.new(comment_params)
-        
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @talk }

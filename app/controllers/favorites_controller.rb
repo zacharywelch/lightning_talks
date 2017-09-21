@@ -1,5 +1,6 @@
-class FavoritesController < ApplicationController  
-  
+class FavoritesController < ApplicationController
+  before_filter :signed_in_user
+
   def index
     @user = User.find(params[:user_id])
     @talks = @user.favorite_talks.page(params[:page])

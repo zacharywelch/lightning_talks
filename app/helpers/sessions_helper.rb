@@ -28,6 +28,10 @@ module SessionsHelper
     end
   end
 
+  def admin_user
+    head :unauthorized unless current_user.admin?
+  end
+
   def redirect_back_or(default)
     redirect_to session[:return_to] || default
     session.delete(:return_to)
