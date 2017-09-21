@@ -63,7 +63,11 @@ class TalksController < ApplicationController
   end
 
   def set_meeting
-    @meeting = params[:meeting_id] ? Meeting.find(params[:meeting_id]) : Meeting.next
+    @meeting = if params[:meeting_id]
+                 Meeting.find(params[:meeting_id])
+               else
+                 Meeting.next
+               end
   end
 
   def set_talk
