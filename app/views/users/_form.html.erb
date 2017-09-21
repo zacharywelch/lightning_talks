@@ -23,7 +23,7 @@
     <%= f.text_field :bio, class: 'stretch' %>
   </fieldset>
   <fieldset>
-    <%= avatar_for @user %>
+    <%= avatar_for @user, size: 100 %>
   </fieldset>
   <div class='pad1y space-bottom4'>
     <%= f.submit 'Save Changes', class: 'btn btn-primary space-bottom' %>
