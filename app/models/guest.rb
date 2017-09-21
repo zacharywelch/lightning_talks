@@ -9,6 +9,10 @@ class Guest
     nil
   end
 
+  def avatar_url
+    Faker::Avatar.image
+  end
+
   def admin?
     false
   end
@@ -17,7 +21,15 @@ class Guest
     false
   end
 
+  def favorite?(talk)
+    false
+  end
+
   def active_relationships
     Relationship.none
+  end
+
+  def favorites
+    Favorite.none
   end
 end

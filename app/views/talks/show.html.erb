@@ -80,7 +80,7 @@
               <%= f.submit 'Post comment', class: 'btn btn-primary' %>
             </div>
           </div>
-        <% end %>
+        <% end if signed_in? %>
       </section>
     </div>
   </article>
