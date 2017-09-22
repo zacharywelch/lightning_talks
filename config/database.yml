@@ -1,0 +1,31 @@
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+staging:
+  adapter: postgresql
+  host: <%= ENV.fetch('POSTGRES_HOST', 'postgres') %>
+  port: <%= ENV.fetch('POSTGRES_PORT', 5432) %>
+  database: <%= ENV.fetch('POSTGRES_DATABASE', 'lightning_talks') %>
+  username: <%= ENV.fetch('POSTGRES_USERNAME') %>
+  password: <%= ENV.fetch('POSTGRES_PASSWORD') %>
+  pool: <%= ENV.fetch('POSTGRES_POOL', 5) %>
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  host: <%= ENV.fetch('POSTGRES_HOST', 'postgres') %>
+  port: <%= ENV.fetch('POSTGRES_PORT', 5432) %>
+  database: <%= ENV.fetch('POSTGRES_DATABASE', 'lightning_talks') %>
+  username: <%= ENV.fetch('POSTGRES_USERNAME') %>
+  password: <%= ENV.fetch('POSTGRES_PASSWORD') %>
+  pool: <%= ENV.fetch('POSTGRES_POOL', 5) %>
+  timeout: 5000

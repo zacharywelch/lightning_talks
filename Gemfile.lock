@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:zacharywelch/kabu-rails.git
+  remote: https://github.com/zacharywelch/kabu-rails.git
   revision: aec5f3ee04665a214d1d5d75909518cb448b7ec7
   specs:
     kabu-rails (1.4.9)

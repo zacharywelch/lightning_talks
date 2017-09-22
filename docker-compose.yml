@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  lightning_talks:
+    image: callrail/lightning_talks:latest
+    command: bundle exec puma -C config/puma.rb
+    expose:
+      - "3000"
+    ports:
+      - "8084:3000"
+    volumes:
+      - '.:/lightning_talks'
+    environment:
+      RAILS_ENV: "development"
