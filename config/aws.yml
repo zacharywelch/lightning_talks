@@ -12,12 +12,12 @@ test:
 
 staging:
   region: <%= ENV.fetch('AWS_REGION', 'us-east-1') %>
-  bucket: <% ENV.fetch('AWS_BUCKET')%>
-  access_key_id: <% ENV.fetch('AWS_ACCESS_KEY_ID')%>
-  secret_access_key: <% ENV.fetch('AWS_ACCESS_KEY')%>
+  bucket: <%= ENV.fetch('AWS_BUCKET')%>
+  access_key_id: <%= ENV.fetch('AWS_ACCESS_KEY_ID')%>
+  secret_access_key: <%= ENV.fetch('AWS_ACCESS_KEY')%>
 
 production:
   region: <%= ENV.fetch('AWS_REGION', 'us-east-1') %>
-  bucket: <% ENV.fetch('AWS_BUCKET')%>
-  access_key_id: <% ENV.fetch('AWS_ACCESS_KEY_ID')%>
-  secret_access_key: <% ENV.fetch('AWS_ACCESS_KEY')%>
+  bucket: <%= ENV.fetch('AWS_BUCKET')%>
+  access_key_id: <%= ENV.fetch('AWS_ACCESS_KEY_ID')%>
+  secret_access_key: <%= ENV.fetch('AWS_ACCESS_KEY')%>

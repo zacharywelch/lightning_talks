@@ -147,6 +147,7 @@ GEM
     passenger (5.0.30)
       rack
       rake (>= 0.8.1)
+    pg (0.21.0)
     posix-spawn (0.3.12)
     puma (3.6.0)
     pygments.rb (0.6.3)
@@ -273,6 +274,7 @@ DEPENDENCIES
   okcomputer
   omniauth-github
   passenger (= 5.0.30)
+  pg
   puma (~> 3.0)
   pygments.rb
   rails (~> 5.0.0, >= 5.0.0.1)

@@ -1,8 +1,11 @@
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  host: <%= ENV.fetch('POSTGRES_HOST', 'postgres') %>
+  port: <%= ENV.fetch('POSTGRES_PORT', 5432) %>
+  database: <%= ENV.fetch('POSTGRES_DATABASE', 'lightning_talks_developemnt') %>
+  username: <%= ENV.fetch('POSTGRES_USERNAME', 'postgres') %>
+  password: <%= ENV.fetch('POSTGRES_PASSWORD', '') %>
+  pool: <%= ENV.fetch('POSTGRES_POOL', 5) %>
 
 test:
   adapter: sqlite3
@@ -15,8 +18,8 @@ staging:
   host: <%= ENV.fetch('POSTGRES_HOST', 'postgres') %>
   port: <%= ENV.fetch('POSTGRES_PORT', 5432) %>
   database: <%= ENV.fetch('POSTGRES_DATABASE', 'lightning_talks') %>
-  username: <%= ENV.fetch('POSTGRES_USERNAME') %>
-  password: <%= ENV.fetch('POSTGRES_PASSWORD') %>
+  username: <%= ENV.fetch('POSTGRES_USERNAME', 'postgres') %>
+  password: <%= ENV.fetch('POSTGRES_PASSWORD', '') %>
   pool: <%= ENV.fetch('POSTGRES_POOL', 5) %>
   timeout: 5000
 
@@ -25,7 +28,7 @@ production:
   host: <%= ENV.fetch('POSTGRES_HOST', 'postgres') %>
   port: <%= ENV.fetch('POSTGRES_PORT', 5432) %>
   database: <%= ENV.fetch('POSTGRES_DATABASE', 'lightning_talks') %>
-  username: <%= ENV.fetch('POSTGRES_USERNAME') %>
-  password: <%= ENV.fetch('POSTGRES_PASSWORD') %>
+  username: <%= ENV.fetch('POSTGRES_USERNAME', 'postgres') %>
+  password: <%= ENV.fetch('POSTGRES_PASSWORD', '') %>
   pool: <%= ENV.fetch('POSTGRES_POOL', 5) %>
   timeout: 5000
