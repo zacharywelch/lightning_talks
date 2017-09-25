@@ -22,3 +22,5 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle install --path /bundle
 
 COPY . .
+
+RUN bundle exec rake assets:precompile
