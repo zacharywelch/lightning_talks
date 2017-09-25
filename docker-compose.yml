@@ -12,7 +12,8 @@ services:
       - postgres-9.5:/var/lib/postgresql/data
   lightning_talks:
     image: callrail/lightning_talks:latest
-    command: bundle exec puma -C config/puma.rb
+    entrypoint: bundle exec
+    command: puma -C config/puma.rb
     depends_on:
       - postgres
     expose:
