@@ -1,0 +1,23 @@
+development:
+  region: '********'
+  bucket: '********'
+  access_key_id: '********'
+  secret_access_key: '********'
+
+test:
+  region: '********'
+  bucket: '********'
+  access_key_id: '********'
+  secret_access_key: '********'
+
+staging:
+  region: <%= ENV.fetch('AWS_REGION', 'us-east-1') %>
+  bucket: <%= ENV.fetch('AWS_BUCKET', 'lighting-talks')%>
+  access_key_id: <%= ENV.fetch('AWS_ACCESS_KEY_ID', '')%>
+  secret_access_key: <%= ENV.fetch('AWS_ACCESS_KEY', '')%>
+
+production:
+  region: <%= ENV.fetch('AWS_REGION', 'us-east-1') %>
+  bucket: <%= ENV.fetch('AWS_BUCKET', 'lighting-talks')%>
+  access_key_id: <%= ENV.fetch('AWS_ACCESS_KEY_ID', '')%>
+  secret_access_key: <%= ENV.fetch('AWS_ACCESS_KEY', '')%>

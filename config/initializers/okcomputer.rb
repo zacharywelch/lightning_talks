@@ -1,2 +1,2 @@
-# Mount healthcheck url at '/health'
-OkComputer.mount_at = 'health'
+# Mount healthcheck url at '/health-check'
+OkComputer.mount_at = 'health-check'

@@ -1,9 +1,9 @@
 class FavoritesController < ApplicationController
-  before_filter :signed_in_user
+  before_filter :signed_in_user, only: [:create, :destroy]
 
   def index
     @user = User.find(params[:user_id])
-    @talks = @user.favorite_talks.page(params[:page])
+    @talks = @user.favorite_talks.includes(:user, :meeting).page(params[:page])
   end
 
   def create
