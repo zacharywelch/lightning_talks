@@ -1,0 +1,27 @@
+version: '2'
+
+volumes:
+  postgres-9.5:
+
+services:
+  postgres:
+    image: postgres:9.5.3
+    expose:
+      - "5432"
+    volumes:
+      - postgres-9.5:/var/lib/postgresql/data
+  lightning_talks:
+    image: callrail/lightning_talks:latest
+    entrypoint: bundle exec
+    command: puma -C config/puma.rb
+    depends_on:
+      - postgres
+    expose:
+      - "3000"
+    ports:
+      - "8084:3000"
+    volumes:
+      - '.:/lightning_talks'
+    environment:
+      RAILS_ENV: "development"
+      POSTGRES_HOST: "postgres"
