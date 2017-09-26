@@ -24,6 +24,6 @@ module LightningTalks
     # -- all .rb files in that directory are automatically loaded.
     config.time_zone = 'Eastern Time (US & Canada)'
 
-    config.x.aws = YAML.load(File.open("#{Rails.root}/config/aws.yml", 'r'))[Rails.env]
+    config.x.aws = YAML.load(ERB.new(File.read("#{Rails.root}/config/aws.yml")).result)[Rails.env]
   end
 end
