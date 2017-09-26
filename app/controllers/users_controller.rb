@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @talks = @user.talks.latest.page(1)
+    @talks = @user.talks.latest.includes(:user, :meeting).page(1)
   end
 
   def edit
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       redirect_to @user, notice: 'Profile updated'
     else
       render 'edit'
-    end    
+    end
   end
 
   def followers
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    redirect_to(root_path) unless current_user?(@user) 
+    redirect_to(root_path) unless current_user?(@user)
   end
 
   def user_params

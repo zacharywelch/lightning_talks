@@ -6,7 +6,7 @@ class TalksController < ApplicationController
   before_action :set_s3_direct_post, only: [:new, :create, :edit, :update]
 
   def index
-    @talks = @user.talks.latest.page(params[:page])
+    @talks = @user.talks.latest.includes(:user, :meeting).page(params[:page])
   end
 
   def show
@@ -49,11 +49,11 @@ class TalksController < ApplicationController
   end
 
   def recent
-    @talks = Talk.includes(:meeting, :user).recent.page(1)
+    @talks = Talk.recent.includes(:meeting, :user).page(1)
   end
 
   def popular
-    @talks = Talk.popular.page(1)
+    @talks = Talk.popular.includes(:meeting, :user).page(1)
   end
 
   private
